@@ -1,0 +1,20 @@
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\bin\Debug\GradeCalculator.exe.config
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\bin\Debug\GradeCalculator.exe
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\bin\Debug\GradeCalculator.pdb
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.csprojResolveAssemblyReference.cache
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.Form1.resources
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.Properties.Resources.resources
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.csproj.GenerateResource.Cache
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.exe
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.pdb
+D:\Program\Microsoft Visual Studio\Projects\GradeCalculator\GradeCalculator\obj\Debug\GradeCalculator.About.resources
+D:\Git\Grade_Calculator\GradeCalculator\bin\Debug\GradeCalculator.exe.config
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.exe
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.pdb
+D:\Git\Grade_Calculator\GradeCalculator\bin\Debug\GradeCalculator.exe
+D:\Git\Grade_Calculator\GradeCalculator\bin\Debug\GradeCalculator.pdb
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.csprojResolveAssemblyReference.cache
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.About.resources
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.Form1.resources
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.Properties.Resources.resources
+D:\Git\Grade_Calculator\GradeCalculator\obj\Debug\GradeCalculator.csproj.GenerateResource.Cache

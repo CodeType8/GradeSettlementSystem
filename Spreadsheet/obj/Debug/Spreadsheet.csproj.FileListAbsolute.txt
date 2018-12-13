@@ -1,0 +1,5 @@
+D:\Git\Grade_Calculator\Spreadsheet\bin\Debug\Spreadsheet.dll
+D:\Git\Grade_Calculator\Spreadsheet\bin\Debug\Spreadsheet.pdb
+D:\Git\Grade_Calculator\Spreadsheet\obj\Debug\Spreadsheet.csprojResolveAssemblyReference.cache
+D:\Git\Grade_Calculator\Spreadsheet\obj\Debug\Spreadsheet.dll
+D:\Git\Grade_Calculator\Spreadsheet\obj\Debug\Spreadsheet.pdb

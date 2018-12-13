@@ -23,11 +23,6 @@ namespace GradeCalculator
             this.Close();
         }
 
-        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            //empty
-        }
-
         private void menuAbout_Click(object sender, EventArgs e)
         {
             //show about
@@ -40,6 +35,7 @@ namespace GradeCalculator
             //appear update button, and check list
             btnUpdate.Visible = true;
             CheckList.Visible = true;
+            lblInstruction.Visible = true;
 
             //display status bar
             lblStatus.Text = "Choose category from list";
@@ -76,11 +72,14 @@ namespace GradeCalculator
             //when press enter button while type name of class
             if (e.KeyCode == Keys.Enter)
             {
+                this.AcceptButton = btnName;
+                /*
                 lblName.Text = txtName.Text;
                 lblName.Visible = true;
                 txtName.Visible = false;
                 btnNameEdit.Visible = true;
                 btnName.Visible = false;
+                */
             }
         }
 
@@ -120,6 +119,7 @@ namespace GradeCalculator
                 txtFinal.Visible = false;
                 lblOther.Visible = false;
                 txtOther.Visible = false;
+                lblInstruction.Visible = true;
                 txtA.Text = "";
                 txtB.Text = "";
                 txtC.Text = "";
@@ -136,11 +136,6 @@ namespace GradeCalculator
                     CheckList.SetItemCheckState(i, CheckState.Unchecked);
                 }
             }
-        }
-
-        private void CheckList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //empty
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -163,6 +158,7 @@ namespace GradeCalculator
                 btnUpdate.Visible = false;
                 menuData.Visible = true;
                 layResult.Visible = true;
+                lblInstruction.Visible = false;
 
                 for (int i = 0; i < CheckList.Items.Count; i++)
                 {
@@ -177,26 +173,44 @@ namespace GradeCalculator
                             case "Attendence":
                                 lblAttedence.Visible = true;
                                 txtAttedence.Visible = true;
+                                lblAttendence2.Visible = true;
+                                resultAttendence.Visible = true;
+                                emptyAttendence.Visible = true;
                                 break;
                             case "In-class works":
                                 lblInclass.Visible = true;
                                 txtInclass.Visible = true;
+                                lblInclass2.Visible = true;
+                                resultInclass.Visible = true;
+                                emptyInclass.Visible = true;
                                 break;
                             case "Assignments":
                                 lblAssignment.Visible = true;
                                 txtAssignment.Visible = true;
+                                lblAssignment2.Visible = true;
+                                resultAssignment.Visible = true;
+                                emptyAssignment.Visible = true;
                                 break;
                             case "Midterm":
                                 lblMidterm.Visible = true;
                                 txtMidterm.Visible = true;
+                                lblMidterm2.Visible = true;
+                                resultMidterm.Visible = true;
+                                emptyMidterm.Visible = true;
                                 break;
                             case "Final":
                                 lblFinal.Visible = true;
                                 txtFinal.Visible = true;
+                                lblFinal2.Visible = true;
+                                resultFinal.Visible = true;
+                                emptyFinal.Visible = true;
                                 break;
                             case "Others":
                                 lblOther.Visible = true;
                                 txtOther.Visible = true;
+                                lblOthers2.Visible = true;
+                                resultOther.Visible = true;
+                                emptyOthers.Visible = true;
                                 break;
                         }
                     }
@@ -210,6 +224,11 @@ namespace GradeCalculator
                 }
 
                 lblStatus.Text = "Fill up all of \"Require Percent\", and \"Percent of Category\" ";
+
+                resultTotal.Visible = true;
+                resultTotal2.Visible = true;
+                resultTotal3.Visible = true;
+                lblTotal.Visible = true;
             }
             else
             {
@@ -221,5 +240,170 @@ namespace GradeCalculator
         {
             MessageBox.Show("Please read and status bar at the bottom. \r\n" + lblStatus.Text);
         }
+
+        private void CheckList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.AcceptButton = btnUpdate;
+            }
+        }
+
+        private void btnFinalScore_Click(object sender, EventArgs e)
+        {
+            double req, sumPercent = calc();
+            string A, B, C;
+
+            if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtA.Text))
+            {
+                req = (Convert.ToDouble(txtA.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
+                A = req + " / 100 need";
+            }
+            else
+            {
+                A = "Not possible";
+            }
+
+            if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtB.Text))
+            {
+                req = (Convert.ToDouble(txtB.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
+                B = req + " / 100 need";
+            }
+            else
+            {
+                B = "Not possible";
+            }
+
+            if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtC.Text))
+            {
+                req = (Convert.ToDouble(txtC.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
+                C = req + " / 100 need";
+            }
+            else
+            {
+                C = "Not possible";
+            }
+            lblTotal.Text = "Require Final: ";
+            resultTotal.Text = "A: " + A;
+            resultTotal2.Text = "B: " + B;
+            resultTotal3.Text = "C: " + C;
+        }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            double sumPercent = calc();
+
+            string rank;
+
+            if (sumPercent >= Convert.ToDouble(txtA.Text))
+            {
+                rank = "A";
+            }
+            else if (sumPercent >= Convert.ToDouble(txtB.Text))
+            {
+                rank = "B";
+            }
+            else if (sumPercent >= Convert.ToDouble(txtC.Text))
+            {
+                rank = "C";
+            }
+            else
+            {
+                rank = "Under C";
+            }
+            lblTotal.Text = "Result: ";
+            resultTotal.Text = "You got \"" + rank + "\" (" + Convert.ToString(sumPercent) + "%)";
+        }
+
+        public double calc()
+        {
+            double count, all;
+            double total = 0, ave, percent, sumPercent = 0; ;
+
+            for (int i = 0; i < DataSheet.Columns.Count; i++)
+            {
+                count = 0;
+                total = 0;
+                ave = 0;
+                percent = 0;
+
+                for (int j = 0; j < DataSheet.Rows.Count; ++j)
+                {
+                    if (DataSheet.Rows[j].Cells[i].Value != null)
+                    {
+                        total += Convert.ToDouble(DataSheet.Rows[j].Cells[i].Value);
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                ave = total / count;
+                all = count * 100;
+
+                switch (DataSheet.Columns[i].HeaderText)
+                {
+                    case "Attendence":
+                        percent = ave / 100 * Convert.ToDouble(txtAttedence.Text);
+                        sumPercent += percent;
+
+                        resultAttendence.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+
+                        break;
+
+                    case "In-class works":
+                        percent = ave / 100 * Convert.ToDouble(txtInclass.Text);
+                        sumPercent += percent;
+
+                        resultInclass.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+
+                        break;
+
+                    case "Assignments":
+                        percent = ave / 100 * Convert.ToDouble(txtAssignment.Text);
+                        sumPercent += percent;
+
+                        resultAssignment.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+
+                        break;
+
+                    case "Midterm":
+                        percent = ave / 100 * Convert.ToDouble(txtMidterm.Text);
+                        sumPercent += percent;
+
+                        resultMidterm.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+
+                        break;
+
+                    case "Final":
+                        if (DataSheet.Rows[0].Cells[i].Value != null)
+                        {
+                            percent = ave / 100 * Convert.ToDouble(txtFinal.Text);
+                            sumPercent += percent;
+
+                            resultFinal.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                        }
+                        else
+                        {
+                            resultFinal.Text = "No score";
+                        }
+
+                        break;
+
+                    case "Others":
+                        percent = ave / 100 * Convert.ToDouble(txtOther.Text);
+                        sumPercent += percent;
+
+                        resultOther.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+
+                        break;
+                }
+
+            }
+
+            return sumPercent;
+        }        
     }
 }

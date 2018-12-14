@@ -162,6 +162,7 @@ namespace GradeCalculator
                 txtFinal.Text = "";
                 txtOther.Text = "";
                 lblStatus.Text = "Choose category from list";
+                lblInstruction.Visible = true;
 
                 foreach (int i in CheckList.CheckedIndices)
                 {
@@ -255,7 +256,7 @@ namespace GradeCalculator
                     DataSheet.Rows[i].HeaderCell.Value = temp.ToString();
                 }
 
-                lblStatus.Text = "Fill up all of \"Require Percent\", and \"Percent of Category\" ";
+                lblStatus.Text = "You must type score out of 100 and fill up all of \"Require Percent\", and \"Percent of Category\" ";
 
                 resultTotal.Visible = true;
                 resultTotal2.Visible = true;
@@ -270,7 +271,7 @@ namespace GradeCalculator
 
         private void menuHelp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please read and status bar at the bottom. \r\n" + lblStatus.Text);
+            MessageBox.Show("Please read and status bar at the bottom.\r\nScore Board must be type score out of 100.\r\nStatus: " + lblStatus.Text);
         }
 
         private void CheckList_KeyDown(object sender, KeyEventArgs e)
@@ -283,68 +284,115 @@ namespace GradeCalculator
 
         private void btnFinalScore_Click(object sender, EventArgs e)
         {
-            double req, sumPercent = calc();
-            string A, B, C;
-
-            if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtA.Text))
+            if (txtFinal.Visible == true)
             {
-                req = (Convert.ToDouble(txtA.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
-                A = req + " / 100 need";
+                if (txtA.Text != "" && txtB.Text != "" && txtC.Text != "")
+                {
+                    if (checkCetegoryAndScore())
+                    {
+                        if (categoryTotal() == 100)
+                        { 
+                            double req, sumPercent = calc();
+                            string A, B, C;
+
+                            if (sumPercent != -1)
+                            {
+                                if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtA.Text))
+                                {
+                                    req = (Convert.ToDouble(txtA.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
+                                    A = req + " / 100 need";
+                                }
+                                else
+                                {
+                                    A = "Not possible";
+                                }
+
+                                if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtB.Text))
+                                {
+                                    req = (Convert.ToDouble(txtB.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
+                                    B = req + " / 100 need";
+                                }
+                                else
+                                {
+                                    B = "Not possible";
+                                }
+
+                                if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtC.Text))
+                                {
+                                    req = (Convert.ToDouble(txtC.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
+                                    C = req + " / 100 need";
+                                }
+                                else
+                                {
+                                    C = "Not possible";
+                                }
+                                lblTotal.Text = "Require Final: ";
+                                resultTotal.Text = "A: " + A;
+                                resultTotal2.Text = "B: " + B;
+                                resultTotal3.Text = "C: " + C;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sum of Category percent is not 100", "Not provided enough category percent", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            lblStatus.Text = "Sum of Category percent is not 100";
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please full the \"Require Percent\".", "Not provided require percents", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Require Percent\".";
+                }
             }
             else
             {
-                A = "Not possible";
+                MessageBox.Show("Final is not requred.", "No need to Final", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblStatus.Text = "Final is not requred.";
             }
-
-            if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtB.Text))
-            {
-                req = (Convert.ToDouble(txtB.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
-                B = req + " / 100 need";
-            }
-            else
-            {
-                B = "Not possible";
-            }
-
-            if (sumPercent + Convert.ToDouble(txtFinal.Text) >= Convert.ToDouble(txtC.Text))
-            {
-                req = (Convert.ToDouble(txtC.Text) - sumPercent) / Convert.ToDouble(txtFinal.Text) * 100;
-                C = req + " / 100 need";
-            }
-            else
-            {
-                C = "Not possible";
-            }
-            lblTotal.Text = "Require Final: ";
-            resultTotal.Text = "A: " + A;
-            resultTotal2.Text = "B: " + B;
-            resultTotal3.Text = "C: " + C;
         }
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
-            double sumPercent = calc();
+            if (txtA.Text != "" && txtB.Text != "" && txtC.Text != "")
+            {
+                if (checkCetegoryAndScore())
+                {
+                    if (categoryTotal() == 100)
+                    {
+                        double sumPercent = calc();
 
-            string rank;
+                        if (sumPercent != -1)
+                        {
+                            string rank;
 
-            if (sumPercent >= Convert.ToDouble(txtA.Text))
-            {
-                rank = "A";
+                            if (sumPercent >= Convert.ToDouble(txtA.Text))
+                            {
+                                rank = "A";
+                            }
+                            else if (sumPercent >= Convert.ToDouble(txtB.Text))
+                            {
+                                rank = "B";
+                            }
+                            else if (sumPercent >= Convert.ToDouble(txtC.Text))
+                            {
+                                rank = "C";
+                            }
+                            else
+                            {
+                                rank = "Under C";
+                            }
+                            lblTotal.Text = "Result: ";
+                            resultTotal.Text = "You got \"" + rank + "\" (" + Convert.ToString(sumPercent) + "%)";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sum of Category percent is not 100", "Not provided enough category percent", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        lblStatus.Text = "Sum of Category percent is not 100";
+                    }
+                }
             }
-            else if (sumPercent >= Convert.ToDouble(txtB.Text))
-            {
-                rank = "B";
-            }
-            else if (sumPercent >= Convert.ToDouble(txtC.Text))
-            {
-                rank = "C";
-            }
-            else
-            {
-                rank = "Under C";
-            }
-            lblTotal.Text = "Result: ";
-            resultTotal.Text = "You got \"" + rank + "\" (" + Convert.ToString(sumPercent) + "%)";
         }
 
         public double calc()
@@ -359,6 +407,13 @@ namespace GradeCalculator
                 ave = 0;
                 percent = 0;
 
+                if (DataSheet.Rows[1].Cells[i].Value == null)
+                {
+                    //-1 means score board is nor filled enough.
+                    MessageBox.Show("Please full the \"Score Board\".", "Not provided Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Score Board\".";
+                    return -1;
+                }
                 for (int j = 0; j < DataSheet.Rows.Count; ++j)
                 {
                     if (DataSheet.Rows[j].Cells[i].Value != null)
@@ -381,7 +436,7 @@ namespace GradeCalculator
                         percent = ave / 100 * Convert.ToDouble(txtAttedence.Text);
                         sumPercent += percent;
 
-                        resultAttendence.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                        resultAttendence.Text = "Total: " + total + " Ave: " + ave + " Percent: " + percent + "%";
 
                         break;
 
@@ -389,7 +444,7 @@ namespace GradeCalculator
                         percent = ave / 100 * Convert.ToDouble(txtInclass.Text);
                         sumPercent += percent;
 
-                        resultInclass.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                        resultInclass.Text = "Total: " + total + " Ave: " + ave + " Percent: " + percent + "%";
 
                         break;
 
@@ -397,7 +452,7 @@ namespace GradeCalculator
                         percent = ave / 100 * Convert.ToDouble(txtAssignment.Text);
                         sumPercent += percent;
 
-                        resultAssignment.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                        resultAssignment.Text = "Total: " + total + " Ave: " + ave + " Percent: " + percent + "%";
 
                         break;
 
@@ -405,7 +460,7 @@ namespace GradeCalculator
                         percent = ave / 100 * Convert.ToDouble(txtMidterm.Text);
                         sumPercent += percent;
 
-                        resultMidterm.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                        resultMidterm.Text = "Total: " + total + " Ave: " + ave + " Percent: " + percent + "%";
 
                         break;
 
@@ -415,7 +470,7 @@ namespace GradeCalculator
                             percent = ave / 100 * Convert.ToDouble(txtFinal.Text);
                             sumPercent += percent;
 
-                            resultFinal.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                            resultFinal.Text = "Total: " + total + " Ave: " + ave + " Percent: " + percent + "%";
                         }
                         else
                         {
@@ -428,14 +483,144 @@ namespace GradeCalculator
                         percent = ave / 100 * Convert.ToDouble(txtOther.Text);
                         sumPercent += percent;
 
-                        resultOther.Text = "Total: " + total + " ave: " + ave + " per: " + percent + "%)";
+                        resultOther.Text = "Total: " + total + " Ave: " + ave + " Percent: " + percent + "%";
 
                         break;
                 }
 
             }
-
             return sumPercent;
-        }        
+        }
+
+        public bool checkCetegoryAndScore()
+        {   
+            if (txtAttedence.Visible == true)
+            {
+                if (txtAttedence.Text == "")
+                {
+                    MessageBox.Show("Please full the \"Percent of Category\".", "Not provided Percent of Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Percent of Category\"";
+                    return false;
+                }
+            }
+
+            if (txtInclass.Visible == true)
+            {
+                if (txtInclass.Text == "")
+                {
+                    MessageBox.Show("Please full the \"Percent of Category\".", "Not provided Percent of Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Percent of Category\"";
+                    return false;
+                }
+            }
+
+            if (txtAssignment.Visible == true)
+            {
+                if (txtAssignment.Text == "")
+                {
+                    MessageBox.Show("Please full the \"Percent of Category\".", "Not provided Percent of Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Percent of Category\"";
+                    return false;
+                }
+            }
+
+            if (txtMidterm.Visible == true)
+            {
+                if (txtMidterm.Text == "")
+                {
+                    MessageBox.Show("Please full the \"Percent of Category\".", "Not provided Percent of Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Percent of Category\"";
+                    return false;
+                }
+            }
+
+            if (txtFinal.Visible == true)
+            {
+                if (txtFinal.Text == "")
+                {
+                    MessageBox.Show("Please full the \"Percent of Category\".", "Not provided Percent of Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Percent of Category\"";
+                    return false;
+                }
+            }
+
+            if (txtOther.Visible == true)
+            {
+                if (txtOther.Text == "")
+                {
+                    MessageBox.Show("Please full the \"Percent of Category\".", "Not provided Percent of Category", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lblStatus.Text = "Please full the \"Percent of Category\"";
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public int categoryTotal()
+        {
+            int count = 0;
+            if (txtAttedence.Visible == true)
+            {
+                count += Convert.ToInt32(txtAttedence.Text);
+            }
+
+            if (txtInclass.Visible == true)
+            {
+                count += Convert.ToInt32(txtInclass.Text);
+            }
+
+            if (txtAssignment.Visible == true)
+            {
+                count += Convert.ToInt32(txtAssignment.Text);
+            }
+
+            if (txtMidterm.Visible == true)
+            {
+                count += Convert.ToInt32(txtMidterm.Text);
+            }
+
+            if (txtFinal.Visible == true)
+            {
+                count += Convert.ToInt32(txtFinal.Text);
+            }
+
+            if (txtOther.Visible == true)
+            {
+                count += Convert.ToInt32(txtOther.Text);
+            }
+
+            return count;
+        }
+
+        //never used yet.
+        //define what category column of score board.
+        int difineScoreHeader(int i)
+        {
+            switch (DataSheet.Columns[i].HeaderText)
+            {
+                case "Attendence":
+                    return 1;
+                case "In-class works":
+                    return 2;
+                case "Assignments":
+                    return 3;
+                case "Midterm":
+                    return 4;
+                case "Final":
+                    return 5;
+                case "Others":
+                    return 6;
+            }
+            return 0;
+        }
+
+        private void NumAndPoint_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

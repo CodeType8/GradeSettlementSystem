@@ -64,7 +64,7 @@
             this.txtB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtC = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblAttedence = new System.Windows.Forms.Label();
             this.txtAttedence = new System.Windows.Forms.TextBox();
@@ -78,22 +78,21 @@
             this.txtFinal = new System.Windows.Forms.TextBox();
             this.lblOther = new System.Windows.Forms.Label();
             this.txtOther = new System.Windows.Forms.TextBox();
-            this.lblInstruction = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblAttendence2 = new System.Windows.Forms.Label();
             this.resultAttendence = new System.Windows.Forms.Label();
+            this.emptyAttendence = new System.Windows.Forms.Label();
             this.lblInclass2 = new System.Windows.Forms.Label();
             this.resultInclass = new System.Windows.Forms.Label();
+            this.emptyInclass = new System.Windows.Forms.Label();
             this.lblAssignment2 = new System.Windows.Forms.Label();
             this.resultAssignment = new System.Windows.Forms.Label();
-            this.emptyAttendence = new System.Windows.Forms.Label();
+            this.emptyAssignment = new System.Windows.Forms.Label();
             this.lblMidterm2 = new System.Windows.Forms.Label();
             this.resultMidterm = new System.Windows.Forms.Label();
+            this.emptyMidterm = new System.Windows.Forms.Label();
             this.lblFinal2 = new System.Windows.Forms.Label();
             this.resultFinal = new System.Windows.Forms.Label();
-            this.emptyAssignment = new System.Windows.Forms.Label();
-            this.emptyInclass = new System.Windows.Forms.Label();
-            this.emptyMidterm = new System.Windows.Forms.Label();
             this.emptyFinal = new System.Windows.Forms.Label();
             this.lblOthers2 = new System.Windows.Forms.Label();
             this.resultOther = new System.Windows.Forms.Label();
@@ -102,6 +101,7 @@
             this.resultTotal = new System.Windows.Forms.Label();
             this.resultTotal2 = new System.Windows.Forms.Label();
             this.resultTotal3 = new System.Windows.Forms.Label();
+            this.lblInstruction = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -196,14 +196,14 @@
             this.resetAndBackToCheckListToolStripMenuItem});
             this.menuData.Name = "menuData";
             this.menuData.Size = new System.Drawing.Size(53, 24);
-            this.menuData.Text = "Data";
+            this.menuData.Text = "&Data";
             this.menuData.Visible = false;
             // 
             // resetAndBackToCheckListToolStripMenuItem
             // 
             this.resetAndBackToCheckListToolStripMenuItem.Name = "resetAndBackToCheckListToolStripMenuItem";
             this.resetAndBackToCheckListToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
-            this.resetAndBackToCheckListToolStripMenuItem.Text = "Reset && Restart";
+            this.resetAndBackToCheckListToolStripMenuItem.Text = "&Reset && Restart";
             this.resetAndBackToCheckListToolStripMenuItem.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // statusStrip1
@@ -212,7 +212,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Label,
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 681);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 674);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(947, 28);
             this.statusStrip1.TabIndex = 5;
@@ -314,7 +314,7 @@
             "Midterm",
             "Final",
             "Others"});
-            this.CheckList.Location = new System.Drawing.Point(0, 101);
+            this.CheckList.Location = new System.Drawing.Point(0, 98);
             this.CheckList.Name = "CheckList";
             this.CheckList.Size = new System.Drawing.Size(947, 158);
             this.CheckList.TabIndex = 3;
@@ -326,7 +326,7 @@
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(0, 259);
+            this.btnUpdate.Location = new System.Drawing.Point(0, 256);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(947, 30);
             this.btnUpdate.TabIndex = 4;
@@ -343,7 +343,7 @@
             this.DataSheet.Location = new System.Drawing.Point(133, 3);
             this.DataSheet.Name = "DataSheet";
             this.DataSheet.RowTemplate.Height = 24;
-            this.DataSheet.Size = new System.Drawing.Size(611, 346);
+            this.DataSheet.Size = new System.Drawing.Size(611, 342);
             this.DataSheet.TabIndex = 1;
             // 
             // btnFinalScore
@@ -351,7 +351,7 @@
             this.btnFinalScore.AutoSize = true;
             this.btnFinalScore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnFinalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalScore.Location = new System.Drawing.Point(133, 355);
+            this.btnFinalScore.Location = new System.Drawing.Point(133, 351);
             this.btnFinalScore.Name = "btnFinalScore";
             this.btnFinalScore.Size = new System.Drawing.Size(197, 34);
             this.btnFinalScore.TabIndex = 3;
@@ -364,7 +364,7 @@
             this.btnTotal.AutoSize = true;
             this.btnTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.Location = new System.Drawing.Point(336, 355);
+            this.btnTotal.Location = new System.Drawing.Point(336, 351);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(175, 34);
             this.btnTotal.TabIndex = 4;
@@ -386,12 +386,12 @@
             this.layResult.Controls.Add(this.btnFinalScore, 1, 1);
             this.layResult.Controls.Add(this.flowLayoutPanel2, 4, 0);
             this.layResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layResult.Location = new System.Drawing.Point(0, 289);
+            this.layResult.Location = new System.Drawing.Point(0, 286);
             this.layResult.Name = "layResult";
             this.layResult.RowCount = 2;
             this.layResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layResult.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.layResult.Size = new System.Drawing.Size(947, 392);
+            this.layResult.Size = new System.Drawing.Size(947, 388);
             this.layResult.TabIndex = 4;
             this.layResult.Visible = false;
             // 
@@ -422,7 +422,7 @@
             this.layRequire.Location = new System.Drawing.Point(3, 3);
             this.layRequire.Name = "layRequire";
             this.layResult.SetRowSpan(this.layRequire, 2);
-            this.layRequire.Size = new System.Drawing.Size(124, 386);
+            this.layRequire.Size = new System.Drawing.Size(124, 382);
             this.layRequire.TabIndex = 0;
             // 
             // label1
@@ -451,6 +451,7 @@
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(100, 24);
             this.txtA.TabIndex = 0;
+            this.txtA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // label4
             // 
@@ -469,6 +470,7 @@
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(100, 24);
             this.txtB.TabIndex = 1;
+            this.txtB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // label5
             // 
@@ -487,37 +489,15 @@
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(100, 24);
             this.txtC.TabIndex = 2;
+            this.txtC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
-            // flowLayoutPanel2
+            // label6
             // 
-            this.flowLayoutPanel2.Controls.Add(this.lblAttendence2);
-            this.flowLayoutPanel2.Controls.Add(this.resultAttendence);
-            this.flowLayoutPanel2.Controls.Add(this.emptyAttendence);
-            this.flowLayoutPanel2.Controls.Add(this.lblInclass2);
-            this.flowLayoutPanel2.Controls.Add(this.resultInclass);
-            this.flowLayoutPanel2.Controls.Add(this.emptyInclass);
-            this.flowLayoutPanel2.Controls.Add(this.lblAssignment2);
-            this.flowLayoutPanel2.Controls.Add(this.resultAssignment);
-            this.flowLayoutPanel2.Controls.Add(this.emptyAssignment);
-            this.flowLayoutPanel2.Controls.Add(this.lblMidterm2);
-            this.flowLayoutPanel2.Controls.Add(this.resultMidterm);
-            this.flowLayoutPanel2.Controls.Add(this.emptyMidterm);
-            this.flowLayoutPanel2.Controls.Add(this.lblFinal2);
-            this.flowLayoutPanel2.Controls.Add(this.resultFinal);
-            this.flowLayoutPanel2.Controls.Add(this.emptyFinal);
-            this.flowLayoutPanel2.Controls.Add(this.lblOthers2);
-            this.flowLayoutPanel2.Controls.Add(this.resultOther);
-            this.flowLayoutPanel2.Controls.Add(this.emptyOthers);
-            this.flowLayoutPanel2.Controls.Add(this.lblTotal);
-            this.flowLayoutPanel2.Controls.Add(this.resultTotal);
-            this.flowLayoutPanel2.Controls.Add(this.resultTotal2);
-            this.flowLayoutPanel2.Controls.Add(this.resultTotal3);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(750, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.layResult.SetRowSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(194, 386);
-            this.flowLayoutPanel2.TabIndex = 2;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 33);
+            this.label6.TabIndex = 16;
             // 
             // lblCategory
             // 
@@ -547,6 +527,7 @@
             this.txtAttedence.Size = new System.Drawing.Size(100, 24);
             this.txtAttedence.TabIndex = 3;
             this.txtAttedence.Visible = false;
+            this.txtAttedence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // lblInclass
             // 
@@ -567,6 +548,7 @@
             this.txtInclass.Size = new System.Drawing.Size(100, 24);
             this.txtInclass.TabIndex = 4;
             this.txtInclass.Visible = false;
+            this.txtInclass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // lblAssignment
             // 
@@ -587,6 +569,7 @@
             this.txtAssignment.Size = new System.Drawing.Size(100, 24);
             this.txtAssignment.TabIndex = 5;
             this.txtAssignment.Visible = false;
+            this.txtAssignment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // lblMidterm
             // 
@@ -607,6 +590,7 @@
             this.txtMidterm.Size = new System.Drawing.Size(100, 24);
             this.txtMidterm.TabIndex = 6;
             this.txtMidterm.Visible = false;
+            this.txtMidterm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // lblFinal
             // 
@@ -627,6 +611,7 @@
             this.txtFinal.Size = new System.Drawing.Size(100, 24);
             this.txtFinal.TabIndex = 7;
             this.txtFinal.Visible = false;
+            this.txtFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
             // lblOther
             // 
@@ -647,25 +632,38 @@
             this.txtOther.Size = new System.Drawing.Size(100, 24);
             this.txtOther.TabIndex = 8;
             this.txtOther.Visible = false;
+            this.txtOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumAndPoint_KeyPress);
             // 
-            // lblInstruction
+            // flowLayoutPanel2
             // 
-            this.lblInstruction.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstruction.Location = new System.Drawing.Point(0, 62);
-            this.lblInstruction.Name = "lblInstruction";
-            this.lblInstruction.Size = new System.Drawing.Size(947, 39);
-            this.lblInstruction.TabIndex = 2;
-            this.lblInstruction.Text = "Choose categories that need to grade you class.";
-            this.lblInstruction.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 200);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 33);
-            this.label6.TabIndex = 16;
+            this.flowLayoutPanel2.Controls.Add(this.lblAttendence2);
+            this.flowLayoutPanel2.Controls.Add(this.resultAttendence);
+            this.flowLayoutPanel2.Controls.Add(this.emptyAttendence);
+            this.flowLayoutPanel2.Controls.Add(this.lblInclass2);
+            this.flowLayoutPanel2.Controls.Add(this.resultInclass);
+            this.flowLayoutPanel2.Controls.Add(this.emptyInclass);
+            this.flowLayoutPanel2.Controls.Add(this.lblAssignment2);
+            this.flowLayoutPanel2.Controls.Add(this.resultAssignment);
+            this.flowLayoutPanel2.Controls.Add(this.emptyAssignment);
+            this.flowLayoutPanel2.Controls.Add(this.lblMidterm2);
+            this.flowLayoutPanel2.Controls.Add(this.resultMidterm);
+            this.flowLayoutPanel2.Controls.Add(this.emptyMidterm);
+            this.flowLayoutPanel2.Controls.Add(this.lblFinal2);
+            this.flowLayoutPanel2.Controls.Add(this.resultFinal);
+            this.flowLayoutPanel2.Controls.Add(this.emptyFinal);
+            this.flowLayoutPanel2.Controls.Add(this.lblOthers2);
+            this.flowLayoutPanel2.Controls.Add(this.resultOther);
+            this.flowLayoutPanel2.Controls.Add(this.emptyOthers);
+            this.flowLayoutPanel2.Controls.Add(this.lblTotal);
+            this.flowLayoutPanel2.Controls.Add(this.resultTotal);
+            this.flowLayoutPanel2.Controls.Add(this.resultTotal2);
+            this.flowLayoutPanel2.Controls.Add(this.resultTotal3);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(750, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.layResult.SetRowSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(194, 382);
+            this.flowLayoutPanel2.TabIndex = 2;
             // 
             // lblAttendence2
             // 
@@ -688,6 +686,15 @@
             this.resultAttendence.Text = "Not Calculated";
             this.resultAttendence.Visible = false;
             // 
+            // emptyAttendence
+            // 
+            this.emptyAttendence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyAttendence.Location = new System.Drawing.Point(3, 40);
+            this.emptyAttendence.Name = "emptyAttendence";
+            this.emptyAttendence.Size = new System.Drawing.Size(180, 30);
+            this.emptyAttendence.TabIndex = 6;
+            this.emptyAttendence.Visible = false;
+            // 
             // lblInclass2
             // 
             this.lblInclass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -708,6 +715,15 @@
             this.resultInclass.TabIndex = 3;
             this.resultInclass.Text = "Not Calculated";
             this.resultInclass.Visible = false;
+            // 
+            // emptyInclass
+            // 
+            this.emptyInclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyInclass.Location = new System.Drawing.Point(3, 110);
+            this.emptyInclass.Name = "emptyInclass";
+            this.emptyInclass.Size = new System.Drawing.Size(182, 29);
+            this.emptyInclass.TabIndex = 12;
+            this.emptyInclass.Visible = false;
             // 
             // lblAssignment2
             // 
@@ -730,14 +746,14 @@
             this.resultAssignment.Text = "Not Calculated";
             this.resultAssignment.Visible = false;
             // 
-            // emptyAttendence
+            // emptyAssignment
             // 
-            this.emptyAttendence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emptyAttendence.Location = new System.Drawing.Point(3, 40);
-            this.emptyAttendence.Name = "emptyAttendence";
-            this.emptyAttendence.Size = new System.Drawing.Size(180, 30);
-            this.emptyAttendence.TabIndex = 6;
-            this.emptyAttendence.Visible = false;
+            this.emptyAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyAssignment.Location = new System.Drawing.Point(3, 179);
+            this.emptyAssignment.Name = "emptyAssignment";
+            this.emptyAssignment.Size = new System.Drawing.Size(182, 29);
+            this.emptyAssignment.TabIndex = 11;
+            this.emptyAssignment.Visible = false;
             // 
             // lblMidterm2
             // 
@@ -760,6 +776,15 @@
             this.resultMidterm.Text = "Not Calculated";
             this.resultMidterm.Visible = false;
             // 
+            // emptyMidterm
+            // 
+            this.emptyMidterm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emptyMidterm.Location = new System.Drawing.Point(3, 248);
+            this.emptyMidterm.Name = "emptyMidterm";
+            this.emptyMidterm.Size = new System.Drawing.Size(182, 29);
+            this.emptyMidterm.TabIndex = 13;
+            this.emptyMidterm.Visible = false;
+            // 
             // lblFinal2
             // 
             this.lblFinal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -780,33 +805,6 @@
             this.resultFinal.TabIndex = 10;
             this.resultFinal.Text = "Not Calculated";
             this.resultFinal.Visible = false;
-            // 
-            // emptyAssignment
-            // 
-            this.emptyAssignment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emptyAssignment.Location = new System.Drawing.Point(3, 179);
-            this.emptyAssignment.Name = "emptyAssignment";
-            this.emptyAssignment.Size = new System.Drawing.Size(182, 29);
-            this.emptyAssignment.TabIndex = 11;
-            this.emptyAssignment.Visible = false;
-            // 
-            // emptyInclass
-            // 
-            this.emptyInclass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emptyInclass.Location = new System.Drawing.Point(3, 110);
-            this.emptyInclass.Name = "emptyInclass";
-            this.emptyInclass.Size = new System.Drawing.Size(182, 29);
-            this.emptyInclass.TabIndex = 12;
-            this.emptyInclass.Visible = false;
-            // 
-            // emptyMidterm
-            // 
-            this.emptyMidterm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emptyMidterm.Location = new System.Drawing.Point(3, 248);
-            this.emptyMidterm.Name = "emptyMidterm";
-            this.emptyMidterm.Size = new System.Drawing.Size(182, 29);
-            this.emptyMidterm.TabIndex = 13;
-            this.emptyMidterm.Visible = false;
             // 
             // emptyFinal
             // 
@@ -883,11 +881,22 @@
             this.resultTotal3.TabIndex = 18;
             this.resultTotal3.Visible = false;
             // 
+            // lblInstruction
+            // 
+            this.lblInstruction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstruction.Location = new System.Drawing.Point(0, 62);
+            this.lblInstruction.Name = "lblInstruction";
+            this.lblInstruction.Size = new System.Drawing.Size(947, 36);
+            this.lblInstruction.TabIndex = 2;
+            this.lblInstruction.Text = "Choose categories that need to grade you class.";
+            this.lblInstruction.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 709);
+            this.ClientSize = new System.Drawing.Size(947, 702);
             this.Controls.Add(this.layResult);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.CheckList);

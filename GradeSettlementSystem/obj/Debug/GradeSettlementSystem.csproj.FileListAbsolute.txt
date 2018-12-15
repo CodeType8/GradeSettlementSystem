@@ -1,0 +1,10 @@
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.exe.config
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.exe
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.pdb
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.csprojResolveAssemblyReference.cache
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeCalculator.About.resources
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.Properties.Resources.resources
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.csproj.GenerateResource.Cache
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.exe
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.pdb
+D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeCalculator.Form1.resources

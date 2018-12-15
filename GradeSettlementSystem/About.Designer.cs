@@ -43,57 +43,57 @@
             // lblAboutDescription
             // 
             this.lblAboutDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAboutDescription.Location = new System.Drawing.Point(297, 136);
+            this.lblAboutDescription.Location = new System.Drawing.Point(296, 136);
             this.lblAboutDescription.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.lblAboutDescription.Multiline = true;
             this.lblAboutDescription.Name = "lblAboutDescription";
             this.lblAboutDescription.ReadOnly = true;
             this.lblAboutDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.lblAboutDescription.Size = new System.Drawing.Size(437, 161);
+            this.lblAboutDescription.Size = new System.Drawing.Size(438, 161);
             this.lblAboutDescription.TabIndex = 23;
             this.lblAboutDescription.TabStop = false;
             // 
             // lblAboutDeveloper
             // 
             this.lblAboutDeveloper.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAboutDeveloper.Location = new System.Drawing.Point(297, 99);
+            this.lblAboutDeveloper.Location = new System.Drawing.Point(296, 99);
             this.lblAboutDeveloper.Margin = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.lblAboutDeveloper.MaximumSize = new System.Drawing.Size(0, 21);
             this.lblAboutDeveloper.Name = "lblAboutDeveloper";
-            this.lblAboutDeveloper.Size = new System.Drawing.Size(437, 21);
+            this.lblAboutDeveloper.Size = new System.Drawing.Size(438, 21);
             this.lblAboutDeveloper.TabIndex = 22;
             this.lblAboutDeveloper.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAboutCopyright
             // 
             this.lblAboutCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAboutCopyright.Location = new System.Drawing.Point(297, 66);
+            this.lblAboutCopyright.Location = new System.Drawing.Point(296, 66);
             this.lblAboutCopyright.Margin = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.lblAboutCopyright.MaximumSize = new System.Drawing.Size(0, 21);
             this.lblAboutCopyright.Name = "lblAboutCopyright";
-            this.lblAboutCopyright.Size = new System.Drawing.Size(437, 21);
+            this.lblAboutCopyright.Size = new System.Drawing.Size(438, 21);
             this.lblAboutCopyright.TabIndex = 21;
             this.lblAboutCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAboutVersion
             // 
             this.lblAboutVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAboutVersion.Location = new System.Drawing.Point(297, 33);
+            this.lblAboutVersion.Location = new System.Drawing.Point(296, 33);
             this.lblAboutVersion.Margin = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.lblAboutVersion.MaximumSize = new System.Drawing.Size(0, 21);
             this.lblAboutVersion.Name = "lblAboutVersion";
-            this.lblAboutVersion.Size = new System.Drawing.Size(437, 21);
+            this.lblAboutVersion.Size = new System.Drawing.Size(438, 21);
             this.lblAboutVersion.TabIndex = 0;
             this.lblAboutVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAboutName
             // 
             this.lblAboutName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAboutName.Location = new System.Drawing.Point(297, 0);
+            this.lblAboutName.Location = new System.Drawing.Point(296, 0);
             this.lblAboutName.Margin = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.lblAboutName.MaximumSize = new System.Drawing.Size(0, 21);
             this.lblAboutName.Name = "lblAboutName";
-            this.lblAboutName.Size = new System.Drawing.Size(437, 21);
+            this.lblAboutName.Size = new System.Drawing.Size(438, 21);
             this.lblAboutName.TabIndex = 19;
             this.lblAboutName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -117,7 +117,7 @@
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(281, 331);
+            this.logoPictureBox.Size = new System.Drawing.Size(280, 331);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;

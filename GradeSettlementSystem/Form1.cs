@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GradeCalculator
 {
@@ -85,12 +86,175 @@ namespace GradeCalculator
 
         private void menuSave_Click(object sender, EventArgs e)
         {
-            
+            //did not started yet
+            //if (btnUpdate.Visible == true)
+
+            SaveFileDialog save = new SaveFileDialog();
+
+            save.Title = "Save the data";
+            save.Filter = "Text files (.txt)|*.txt|All files|*.*";
+            save.FilterIndex = 1;
+            save.RestoreDirectory = true;
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(save.FileName))
+                {
+                    //write class name
+                    sw.WriteLine(lblName.Text);
+                    sw.WriteLine("");
+
+                    //write require percent
+                    sw.WriteLine("Require Percent:");
+                    sw.WriteLine("A=" + txtA.Text + ", B=" + txtB.Text + ", C=" + txtC.Text);
+                    sw.WriteLine("");
+
+                    //define category and write data
+                    int i = 0;
+                    string category = null, score = null;
+                    if (lblAttedence.Visible == true)
+                    {
+                        category += "1";
+                        sw.WriteLine("Attedence:");
+                        sw.WriteLine("Require=" + txtAttedence.Text);
+
+                        score = addScore(i);
+                        i++;
+
+                        sw.WriteLine("Score=" + score);
+                        sw.WriteLine("");
+                    }
+                    else
+                    {
+                        category += "0";
+                    }
+                    if (lblInclass.Visible == true)
+                    {
+                        category += "1";
+                        sw.WriteLine("In-Class Works:");
+                        sw.WriteLine("Require=" + txtInclass.Text);
+
+                        score = addScore(i);
+                        i++;
+
+                        sw.WriteLine("Score=" + score);
+                        sw.WriteLine("");
+                    }
+                    else
+                    {
+                        category += "0";
+                    }
+                    if (lblAssignment.Visible == true)
+                    {
+                        category += "1";
+                        sw.WriteLine("Assignment:");
+                        sw.WriteLine("Require=" + txtAssignment.Text);
+
+                        score = addScore(i);
+                        i++;
+
+                        sw.WriteLine("Score=" + score);
+                        sw.WriteLine("");
+                    }
+                    else
+                    {
+                        category += "0";
+                    }
+                    if (lblMidterm.Visible == true)
+                    {
+                        category += "1";
+                        sw.WriteLine("Midterm:");
+                        sw.WriteLine("Require=" + txtMidterm.Text);
+
+                        score = addScore(i);
+                        i++;
+
+                        sw.WriteLine("Score=" + score);
+                        sw.WriteLine("");
+                    }
+                    else
+                    {
+                        category += "0";
+                    }
+                    if (lblFinal.Visible == true)
+                    {
+                        category += "1";
+                        sw.WriteLine("Final:");
+                        sw.WriteLine("Require=" + txtFinal.Text);
+
+                        score = addScore(i);
+                        i++;
+
+                        sw.WriteLine("Score=" + score);
+                        sw.WriteLine("");
+                    }
+                    else
+                    {
+                        category += "0";
+                    }
+                    if (lblOther.Visible == true)
+                    {
+                        category += "1";
+                        sw.WriteLine("Others:");
+                        sw.WriteLine("Require=" + txtOther.Text);
+
+                        score = addScore(i);
+                        i++;
+
+                        sw.WriteLine("Score=" + score);
+                        sw.WriteLine("");
+                    }
+                    else
+                    {
+                        category += "0";
+                    }
+
+                    sw.WriteLine("#" + category);
+                }
+            }
+        }
+
+        public string addScore(int i)
+        {
+            string score = null;
+
+            for (int j = 0; j < DataSheet.Rows.Count; ++j)
+            {
+                if (DataSheet.Rows[j].Cells[i].Value != null)
+                {
+                    score += DataSheet.Rows[j].Cells[i].Value + ",";
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return score;
         }
 
         private void menuLoad_Click(object sender, EventArgs e)
         {
+            OpenFileDialog open = new OpenFileDialog();
+            
+            open.Filter = "Text Files (.txt)|*.txt|All Files (*.*)|*.*";
+            open.FilterIndex = 1;
+            open.Multiselect = true;
+            
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                Stream file = open.OpenFile();
+                StreamReader sr = new StreamReader(file);
 
+                //define category
+                //String last = File.ReadLines(@"D:\asdf.txt").Last();
+
+                //txtMain.Clear();
+                //txtMain.Text = sr.ReadToEnd();
+                file.Close();
+
+
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -292,7 +456,7 @@ namespace GradeCalculator
                     {
                         if (categoryTotal() == 100)
                         { 
-                            double req, sumPercent = calc();
+                            double req, sumPercent = calc(false);
                             string A, B, C;
 
                             if (sumPercent != -1)
@@ -360,7 +524,7 @@ namespace GradeCalculator
                 {
                     if (categoryTotal() == 100)
                     {
-                        double sumPercent = calc();
+                        double sumPercent = calc(true);
 
                         if (sumPercent != -1)
                         {
@@ -395,7 +559,7 @@ namespace GradeCalculator
             }
         }
 
-        public double calc()
+        public double calc(bool final)
         {
             double count, all;
             double total = 0, ave, percent, sumPercent = 0; ;
@@ -407,7 +571,7 @@ namespace GradeCalculator
                 ave = 0;
                 percent = 0;
 
-                if (DataSheet.Rows[1].Cells[i].Value == null)
+                if (DataSheet.Rows[1].Cells[i].Value == null && final)
                 {
                     //-1 means score board is nor filled enough.
                     MessageBox.Show("Please full the \"Score Board\".", "Not provided Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);

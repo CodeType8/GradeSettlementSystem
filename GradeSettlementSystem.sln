@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeCalculator", "GradeCalculator\GradeCalculator.csproj", "{5CBC305C-A99F-4DD3-A92F-1F57C66078C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeSettlementSystem", "GradeSettlementSystem\GradeSettlementSystem.csproj", "{A437B616-E356-49E3-960F-774EEA7BDA4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5CBC305C-A99F-4DD3-A92F-1F57C66078C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CBC305C-A99F-4DD3-A92F-1F57C66078C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CBC305C-A99F-4DD3-A92F-1F57C66078C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CBC305C-A99F-4DD3-A92F-1F57C66078C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A437B616-E356-49E3-960F-774EEA7BDA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A437B616-E356-49E3-960F-774EEA7BDA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A437B616-E356-49E3-960F-774EEA7BDA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A437B616-E356-49E3-960F-774EEA7BDA4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

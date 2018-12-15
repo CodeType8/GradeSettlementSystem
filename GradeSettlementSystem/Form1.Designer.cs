@@ -138,26 +138,26 @@
             // menuSave
             // 
             this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(181, 26);
+            this.menuSave.Size = new System.Drawing.Size(117, 26);
             this.menuSave.Text = "&Save";
             this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
             // 
             // menuLoad
             // 
             this.menuLoad.Name = "menuLoad";
-            this.menuLoad.Size = new System.Drawing.Size(181, 26);
+            this.menuLoad.Size = new System.Drawing.Size(117, 26);
             this.menuLoad.Text = "&Load";
             this.menuLoad.Click += new System.EventHandler(this.menuLoad_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(181, 26);
+            this.menuExit.Size = new System.Drawing.Size(117, 26);
             this.menuExit.Text = "E&xit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -174,19 +174,19 @@
             // menuHelp
             // 
             this.menuHelp.Name = "menuHelp";
-            this.menuHelp.Size = new System.Drawing.Size(181, 26);
+            this.menuHelp.Size = new System.Drawing.Size(125, 26);
             this.menuHelp.Text = "&Help";
             this.menuHelp.Click += new System.EventHandler(this.menuHelp_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(122, 6);
             // 
             // menuAbout
             // 
             this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(181, 26);
+            this.menuAbout.Size = new System.Drawing.Size(125, 26);
             this.menuAbout.Text = "&About";
             this.menuAbout.Click += new System.EventHandler(this.menuAbout_Click);
             // 
@@ -249,16 +249,16 @@
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(368, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(46, 20);
+            this.lblName.Size = new System.Drawing.Size(80, 20);
             this.lblName.TabIndex = 6;
-            this.lblName.Text = "temp";
+            this.lblName.Text = "No_name";
             this.lblName.Visible = false;
             // 
             // btnName
             // 
             this.btnName.AutoSize = true;
             this.btnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnName.Location = new System.Drawing.Point(469, 3);
+            this.btnName.Location = new System.Drawing.Point(503, 3);
             this.btnName.Name = "btnName";
             this.btnName.Size = new System.Drawing.Size(40, 28);
             this.btnName.TabIndex = 7;
@@ -279,7 +279,7 @@
             // 
             this.btnNameEdit.AutoSize = true;
             this.btnNameEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNameEdit.Location = new System.Drawing.Point(420, 3);
+            this.btnNameEdit.Location = new System.Drawing.Point(454, 3);
             this.btnNameEdit.Name = "btnNameEdit";
             this.btnNameEdit.Size = new System.Drawing.Size(43, 28);
             this.btnNameEdit.TabIndex = 9;

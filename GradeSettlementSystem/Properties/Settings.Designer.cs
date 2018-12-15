@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GradeCalculator.Properties
+namespace GradeSettlementSystem.Properties
 {
 
 

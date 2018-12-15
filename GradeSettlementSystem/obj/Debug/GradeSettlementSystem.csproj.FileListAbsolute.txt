@@ -8,3 +8,6 @@ D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlemen
 D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.exe
 D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.pdb
 D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeCalculator.Form1.resources
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.exe.config
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.exe
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.pdb

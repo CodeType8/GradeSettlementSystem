@@ -11,3 +11,10 @@ D:\Program\Microsoft Visual Studio\Projects\GradeSettlementSystem\GradeSettlemen
 D:\Git\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.exe.config
 D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.exe
 D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.pdb
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.exe
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\bin\Debug\GradeSettlementSystem.pdb
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.csprojResolveAssemblyReference.cache
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeCalculator.About.resources
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeCalculator.Form1.resources
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.Properties.Resources.resources
+D:\Git\GradeSettlementSystem\GradeSettlementSystem\obj\Debug\GradeSettlementSystem.csproj.GenerateResource.Cache

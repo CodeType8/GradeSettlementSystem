@@ -251,9 +251,8 @@ namespace GradeCalculator
 
                 //txtMain.Clear();
                 //txtMain.Text = sr.ReadToEnd();
+
                 file.Close();
-
-
             }
         }
 

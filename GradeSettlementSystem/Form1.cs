@@ -241,10 +241,16 @@ namespace GradeCalculator
             open.FilterIndex = 1;
             open.Multiselect = true;
             
+            
             if (open.ShowDialog() == DialogResult.OK)
             {
                 Stream file = open.OpenFile();
                 StreamReader sr = new StreamReader(file);
+                string line = null;
+
+                //if there have save file and data, then skip the first step, and fill up data that in the file.
+                
+                
 
                 //define category
                 //String last = File.ReadLines(@"D:\asdf.txt").Last();

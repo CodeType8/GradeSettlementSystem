@@ -116,8 +116,8 @@ namespace GradeCalculator
         private void About_Load(object sender, EventArgs e)
         {
             lblAboutName.Text = "Grade Calculator";
-            lblAboutVersion.Text = "1.3.0";
-            lblAboutCopyright.Text = "There is no Copyright";
+            lblAboutVersion.Text = "1.3.1";
+            lblAboutCopyright.Text = "Copyright @CodeType 2019";
             lblAboutDeveloper.Text = "CodeType";
             lblAboutDescription.Text = "This program made by CodeType. \r\nUser can easy to calculate their grade and how much final score required for certain grade.";
         }
